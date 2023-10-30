@@ -17,6 +17,8 @@
         "prettier"
     ],
     "rules": {
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        // 屏蔽 18 版本要引入 react 的报错
+        "react/react-in-jsx-scope": "off"
     }
 }
