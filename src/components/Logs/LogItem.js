@@ -11,7 +11,6 @@ const LogItem = () => {
           <div className="time">40分钟</div>
         </div>
       </div>
-      <div
     </em>
   );
 };
