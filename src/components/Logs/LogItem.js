@@ -1,17 +1,28 @@
 import DateShow from './DateShow/DateShow';
 import './LogItem.css';
-const LogItem = () => {
+import PropTypes from 'prop-types';
+const LogItem = (props) => {
+  // const onClickHandler = (event) => {
+  //   event.preventDefault();
+  //   // if (event instanceof MouseEvent) event.preventDefault();
+  // };
+  console.log(props);
   return (
-    <em>
+    <>
       {/* 日志项容器 */}
       <div className="item">
-        <DateShow />
+        <DateShow date={props.date} />
         <div className="content">
-          <h2 className="desc">学习 React22</h2>
-          <div className="time">40分钟</div>
+          <h2 className="desc">{props.desc}</h2>
+          <div className="time">{props.time}</div>
         </div>
       </div>
-    </em>
+    </>
   );
+};
+LogItem.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+  desc: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
 };
 export default LogItem;
